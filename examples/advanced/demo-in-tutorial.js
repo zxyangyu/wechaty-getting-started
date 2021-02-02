@@ -1,8 +1,8 @@
 const qrTerm = require('qrcode-terminal')
 
-const { 
-  Wechaty, 
-  Room 
+const {
+  Wechaty,
+  Room
 } = require('wechaty')
 
 const bot = new Wechaty()
@@ -19,6 +19,7 @@ bot.on('logout',  function (user) {
   console.log(`${user} logout`)
 })
 
+// 好友申请相关
 bot.on('friendship', async function (friendship) {
   console.log(`get FRIENDSHIP event!`)
 
@@ -53,6 +54,7 @@ bot.on('message', async function (msg) {
     msg.say('Welcome to wechaty, I am wechaty bot RUI!')
   }
 
+  // room 关键字 拉人进群
   if (/room/.test(text)) {
     const keyroom = await bot.Room.find({topic: 'wechaty test room'})
 
@@ -62,7 +64,7 @@ bot.on('message', async function (msg) {
       await keyroom.say(`Welcome to join ${topic}`, contact)
     }
   }
-
+// 踢人
   if (/fword/.test(text)) {
     let keyroom = await bot.Room.find({topic: 'wechaty test room'})
 

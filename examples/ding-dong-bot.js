@@ -7,7 +7,7 @@ const {
   ScanStatus,
   log,
 }               = require('wechaty')
-
+const {PuppetPadlocal }=require('wechaty-puppet-padlocal')
 /**
  * You can ignore the next line becasue it is using for CodeSandbox
  */
@@ -61,7 +61,9 @@ const bot = new Wechaty({
    * Learn more about Wechaty Puppet at:
    *  https://github.com/wechaty/wechaty-puppet/wiki/Directory
    */
-  // puppet: 'wechaty-puppet-wechat4u',
+  puppet: new PuppetPadlocal = ({
+      token: puppet_paimon_0806bfcae0fa44a6526b055fb1f289e8
+  })
   // Set as above, or set using environment variable WECHATY_PUPPET
 })
 

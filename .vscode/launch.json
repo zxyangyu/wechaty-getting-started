@@ -1,0 +1,29 @@
+{
+    // 使用 IntelliSense 了解相关属性。
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "node rss parser",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\src\\event-handler\\rss_test.js"
+        },
+        {
+          "type": "node",
+          "request": "launch",
+          "name": "robot",
+          "skipFiles": [
+              "<node_internals>/**"
+          ],
+          "program": "${workspaceFolder}\\src\\index.js",
+          "env":{
+            "WECHATY_PUPPET_SERVICE_TOKEN":"puppet_paimon_0806bfcae0fa44a6526b055fb1f289e8"
+          }
+      }
+    ]
+}
